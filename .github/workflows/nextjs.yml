@@ -23,7 +23,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    env.local:
+    env:
       POSTGRES_URL: ${{ secrets.POSTGRES_URL }}
 
     steps:
