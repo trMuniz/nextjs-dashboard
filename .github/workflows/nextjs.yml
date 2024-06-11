@@ -54,10 +54,8 @@ jobs:
           node-version: "20"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-        with:
-          static_site_generator: next
+      - name: Install Vercel CLI
+        run: npm install -g vercel
 
       - name: Restore cache
         uses: actions/cache@v4
@@ -71,8 +69,8 @@ jobs:
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
 
-      - name: Build with Next.js
-        run: ${{ steps.detect-package-manager.outputs.runner }} next build
+      - name: Build with Vercel
+        run: vercel build
 
       - name: Run tests
         run: ${{ steps.detect-package-manager.outputs.runner }} next test
