@@ -1,5 +1,5 @@
 {
-  homepage: "http://trMuniz.github.io/nextjs-dashboard",
+  "homepage": "http://trMuniz.github.io/nextjs-dashboard",
   "private": true,
   "scripts": {
     "build": "next build",
